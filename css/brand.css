@@ -1,0 +1,13 @@
+/* 싸카 브랜드 색 — 싸카 체리 레드 */
+:root {
+  --ssaka: #B3132B;        /* 메인 (로고·큰 버튼·아이콘) */
+  --ssaka-deep: #8E0A1C;   /* 작은 흰 글씨가 올라가는 버튼·링크 */
+  --ssaka-soft: #FBE9EC;   /* 옅은 배경 */
+  --ssaka-line: #F2C2CA;
+  --ink: #1A1A1A;
+  --ink-2: #5E5E5E;
+  --line: #ECECEC;
+  --bg: #FFFFFF;
+  --bg-2: #F6F6F6;
+  --font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+}

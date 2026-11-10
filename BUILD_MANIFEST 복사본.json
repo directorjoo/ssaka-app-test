@@ -1,0 +1,19 @@
+{
+  "name": "SSABA restaurant marketing platform",
+  "base": "SSAKA_RESTAURANT_48_DESIGNS_v32_1",
+  "bundle_version": "32.1-marketplace-dev",
+  "built_on": "2026-11-10",
+  "included": [
+    "existing Cloudflare Pages app",
+    "restaurant design engine",
+    "Canva OAuth module",
+    "designer onboarding and template marketplace skeleton"
+  ],
+  "not_configured": [
+    "Canva production credentials",
+    "payment gateway",
+    "refunds",
+    "automated payouts",
+    "social auto-publishing"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "template": "actor",
+  "title": "배우 김싸카",
+  "subtitle": "신인 배우 · 178cm · 서울/여수",
+  "theme": "dark",
+  "image": "",
+  "video": "https://www.youtube.com/",
+  "body": ["단편 「바다의 문」 주연 (2026)", "장편 「여수 밤바다」 조연 (2025)", "웹드라마 「식탁」 단역 (2024)"],
+  "contact": { "name": "김싸카", "org": "싸카 엔터테인먼트", "phone": "010-0000-0000", "email": "cast@example.com", "note": "캐스팅 문의", "callLabel": "캐스팅 문의" },
+  "buttons": ["call", "save", "copy"],
+  "copy": { "label": "인스타 링크", "value": "https://instagram.com/" }
+}

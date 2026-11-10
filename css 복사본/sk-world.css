@@ -1,0 +1,318 @@
+/* 싸바카드 디자인 가족 v3 — 은은함 · 모던 · 화려함 · 세계
+ * sk.css 뒤에 불러옵니다. 모든 규칙은 .sk[data-style="..."] 안에서만 적용.
+ * 색은 designs.js 의 팔레트(--bg --paper --ink --accent --c1~3)를 그대로 씁니다.
+ */
+
+/* ---------- 공통: 사진 없을 때 글자 동그라미가 너무 크지 않게 ---------- */
+.sk[data-style] .sk-titles { position: relative; }
+
+/* =========================================================
+   1. 미니멀 화이트 — 여백, 머리카락처럼 가는 선, 가벼운 글씨
+   ========================================================= */
+.sk[data-style="minimal"] .sk-wrap { padding-top: 40px; }
+.sk[data-style="minimal"] .sk-hero { display: flex; flex-direction: column; }
+.sk[data-style="minimal"] .sk-titles { order: -1; }
+.sk[data-style="minimal"] .sk-titles::before { content: ""; display: block; width: 28px; height: 1px; background: var(--on-bg); margin-bottom: 26px; }
+.sk[data-style="minimal"] .sk-title { font-size: clamp(34px, 10vw, 44px); font-weight: 300; letter-spacing: -0.04em; line-height: 1.15; }
+.sk[data-style="minimal"] .sk-sub { font-size: 13.5px; letter-spacing: .14em; margin-top: 14px; }
+.sk[data-style="minimal"] .sk-photo { aspect-ratio: 1 / 1; margin-top: 30px; background: var(--paper); }
+.sk[data-style="minimal"] .sk-photo.sk-nophoto { aspect-ratio: 3 / 1; display: grid; place-items: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: transparent; }
+.sk[data-style="minimal"] .sk-nophoto .sk-mono { font-size: 30px; font-weight: 300; letter-spacing: .5em; padding-left: .5em; color: var(--accent-line); }
+.sk[data-style="minimal"] .sk-list { margin-top: 26px; }
+.sk[data-style="minimal"] .sk-list li { padding: 14px 0; font-size: 15px; font-weight: 300; border-bottom: 1px solid var(--line); }
+.sk[data-style="minimal"] .sk-actions { grid-template-columns: 1fr 1fr; gap: 0; margin-top: 32px; border-top: 1px solid var(--on-bg); }
+.sk[data-style="minimal"] .sk-act { flex-direction: column; align-items: flex-start; gap: 10px; padding: 18px 4px 18px 0; border-bottom: 1px solid var(--line); }
+.sk[data-style="minimal"] .sk-act:nth-child(odd) { border-right: 1px solid var(--line); }
+.sk[data-style="minimal"] .sk-act:nth-child(even) { padding-left: 16px; }
+.sk[data-style="minimal"] .sk-ico svg { width: 20px; height: 20px; stroke-width: 1.3; }
+.sk[data-style="minimal"] .sk-lab { font-weight: 500; font-size: 15px; }
+.sk[data-style="minimal"] .sk-meta { max-width: 100%; color: var(--sub-bg); opacity: 1; }
+.sk[data-style="minimal"] .sk-share { border-radius: 0; }
+.sk[data-style="minimal"] .sk-sms, .sk[data-style="minimal"] .sk-mapbtn, .sk[data-style="minimal"] .sk-video { border-radius: 0; }
+
+/* =========================================================
+   2. 파스텔 소프트 — 몽글몽글 동그라미, 둥근 카드
+   ========================================================= */
+.sk[data-style="pastel"] .sk-bg i { display: block; position: absolute; border-radius: 50%; filter: blur(2px); opacity: .9; }
+.sk[data-style="pastel"] .sk-bg i:nth-child(1) { width: 58%; aspect-ratio: 1; left: -14%; top: -4%; background: var(--blob1); }
+.sk[data-style="pastel"] .sk-bg i:nth-child(2) { width: 44%; aspect-ratio: 1; right: -10%; top: 30%; background: var(--blob2); }
+.sk[data-style="pastel"] .sk-bg i:nth-child(3) { width: 50%; aspect-ratio: 1; left: 20%; bottom: -10%; background: var(--blob3); }
+.sk[data-style="pastel"] .sk-hero { text-align: center; padding-top: 18px; }
+.sk[data-style="pastel"] .sk-photo { width: 64%; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; border: 8px solid var(--paper); box-shadow: 0 18px 34px -20px rgba(80, 40, 90, .45); }
+.sk[data-style="pastel"] .sk-photo.sk-nophoto { width: 46%; background: var(--paper); display: grid; place-items: center; }
+.sk[data-style="pastel"] .sk-nophoto .sk-mono { font-size: 64px; font-weight: 800; color: var(--accent-line); }
+.sk[data-style="pastel"] .sk-titles { margin-top: 20px; }
+.sk[data-style="pastel"] .sk-title { font-size: clamp(30px, 9vw, 38px); letter-spacing: -0.04em; }
+.sk[data-style="pastel"] .sk-sub { display: inline-block; margin-top: 12px; padding: 6px 14px; border-radius: 999px; background: var(--paper); color: var(--sub); font-size: 13.5px; }
+.sk[data-style="pastel"] .sk-list { margin-top: 24px; padding: 8px 20px; border-radius: 28px; background: var(--paper); color: var(--ink); box-shadow: 0 14px 30px -24px rgba(80, 40, 90, .5); }
+.sk[data-style="pastel"] .sk-list li { padding: 12px 0; font-size: 15.5px; text-align: center; }
+.sk[data-style="pastel"] .sk-list li + li { border-top: 1.5px dashed var(--line-ink); }
+.sk[data-style="pastel"] .sk-actions { gap: 10px; }
+.sk[data-style="pastel"] .sk-act { flex-direction: column; justify-content: center; text-align: center; gap: 8px; min-height: 104px; padding: 12px 8px; border-radius: 28px; background: var(--paper); color: var(--ink); box-shadow: 0 12px 26px -22px rgba(80, 40, 90, .55); }
+.sk[data-style="pastel"] .sk-act .sk-ico { width: 44px; height: 44px; border-radius: 50%; background: var(--c1); color: var(--on-c1); }
+.sk[data-style="pastel"] .sk-act:nth-child(2) .sk-ico { background: var(--c2); color: var(--on-c2); }
+.sk[data-style="pastel"] .sk-act:nth-child(3) .sk-ico { background: var(--c3); color: var(--on-c3); }
+.sk[data-style="pastel"] .sk-act .sk-meta { max-width: 100%; color: var(--sub); opacity: 1; }
+.sk[data-style="pastel"] .sk-share, .sk[data-style="pastel"] .sk-sms, .sk[data-style="pastel"] .sk-video, .sk[data-style="pastel"] .sk-mapbtn { border-radius: 999px; }
+
+/* =========================================================
+   3. 한지·먹 — 따뜻한 종이결, 먹빛 명조, 붉은 낙관
+   ========================================================= */
+.sk[data-style="hanji"] .sk-bg {
+  background:
+    radial-gradient(ellipse at 20% 10%, color-mix(in srgb, var(--paper) 70%, transparent), transparent 55%),
+    repeating-linear-gradient(97deg, rgba(120, 90, 50, .035) 0 2px, transparent 2px 7px),
+    repeating-linear-gradient(8deg, rgba(120, 90, 50, .03) 0 1px, transparent 1px 11px);
+}
+.sk[data-style="hanji"] .sk-wrap { padding-top: 26px; }
+.sk[data-style="hanji"] .sk-main { position: relative; padding: 26px 22px 22px; border: 1.5px solid color-mix(in srgb, var(--on-bg) 55%, transparent); outline: 1px solid color-mix(in srgb, var(--on-bg) 30%, transparent); outline-offset: -7px; }
+.sk[data-style="hanji"] .sk-hero { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: start; }
+.sk[data-style="hanji"] .sk-photo { grid-column: 1 / -1; order: 2; aspect-ratio: 4 / 3; margin-top: 4px; filter: saturate(.85) sepia(.12); }
+.sk[data-style="hanji"] .sk-photo.sk-nophoto { order: 0; grid-column: 2; grid-row: 1; width: 58px; height: 58px; aspect-ratio: auto; margin: 0; background: var(--accent); border-radius: 6px; display: grid; place-items: center; transform: rotate(-4deg); box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--on-accent) 35%, transparent); }
+.sk[data-style="hanji"] .sk-nophoto .sk-mono { font-size: 30px; color: var(--on-accent); font-weight: 900; }
+.sk[data-style="hanji"] .sk-titles { grid-column: 1; grid-row: 1; }
+.sk[data-style="hanji"] .sk-title { font-size: clamp(32px, 10vw, 42px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; }
+.sk[data-style="hanji"] .sk-sub { font-family: var(--f-title); font-size: 15px; }
+.sk[data-style="hanji"] .sk-list { margin-top: 20px; }
+.sk[data-style="hanji"] .sk-list li { font-family: var(--f-title); padding: 12px 0 12px 22px; position: relative; font-size: 16px; border-top: 1px solid var(--line); }
+.sk[data-style="hanji"] .sk-list li::before { content: ""; position: absolute; left: 4px; top: 1.15em; width: 7px; height: 7px; background: var(--accent-line); transform: rotate(45deg); }
+.sk[data-style="hanji"] .sk-actions { gap: 8px; margin-top: 20px; }
+.sk[data-style="hanji"] .sk-act { justify-content: center; flex-direction: column; text-align: center; gap: 6px; min-height: 92px; border: 1.5px solid color-mix(in srgb, var(--on-bg) 60%, transparent); }
+.sk[data-style="hanji"] .sk-act .sk-ico { color: var(--accent-line); }
+.sk[data-style="hanji"] .sk-act .sk-lab { font-family: var(--f-title); font-weight: 800; font-size: 16.5px; }
+.sk[data-style="hanji"] .sk-act .sk-meta { max-width: 100%; color: var(--sub-bg); opacity: 1; }
+.sk[data-style="hanji"] .sk-share, .sk[data-style="hanji"] .sk-sms, .sk[data-style="hanji"] .sk-video, .sk[data-style="hanji"] .sk-mapbtn { border-radius: 2px; }
+
+/* =========================================================
+   4. 모던 다크 — 깊은 검정, 굵은 고딕, 한 줄의 빛
+   ========================================================= */
+.sk[data-style="mdark"] .sk-bg { background: radial-gradient(120% 60% at 100% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%); }
+.sk[data-style="mdark"] .sk-wrap { padding-top: 0; }
+.sk[data-style="mdark"] .sk-hero { margin: 0 -20px; }
+.sk[data-style="mdark"] .sk-photo { aspect-ratio: 1 / 1; }
+.sk[data-style="mdark"] .sk-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, var(--bg)); }
+.sk[data-style="mdark"] .sk-photo.sk-nophoto { aspect-ratio: auto; height: 120px; background: transparent; }
+.sk[data-style="mdark"] .sk-photo.sk-nophoto::after { display: none; }
+.sk[data-style="mdark"] .sk-nophoto .sk-mono { display: none; }
+.sk[data-style="mdark"] .sk-titles { padding: 0 22px; margin-top: -56px; }
+.sk[data-style="mdark"] .sk-nophoto + .sk-titles { margin-top: -40px; }
+.sk[data-style="mdark"] .sk-title { font-size: clamp(40px, 12.5vw, 56px); font-weight: 900; letter-spacing: -0.055em; line-height: 1.02; }
+.sk[data-style="mdark"] .sk-sub { margin-top: 16px; padding-left: 14px; border-left: 3px solid var(--accent-line); font-size: 14.5px; }
+.sk[data-style="mdark"] .sk-list { margin-top: 30px; }
+.sk[data-style="mdark"] .sk-list li { display: flex; gap: 14px; padding: 14px 0; font-size: 15.5px; border-bottom: 1px solid var(--line); counter-increment: mdk; }
+.sk[data-style="mdark"] .sk-list li::before { content: counter(mdk, decimal-leading-zero); font-size: 12px; font-weight: 800; color: var(--accent-line); padding-top: 3px; letter-spacing: .06em; }
+.sk[data-style="mdark"] .sk-actions { gap: 8px; margin-top: 26px; }
+.sk[data-style="mdark"] .sk-act { flex-direction: column; align-items: flex-start; gap: 18px; min-height: 112px; padding: 16px; border-radius: 18px; background: var(--paper); color: var(--ink); }
+.sk[data-style="mdark"] .sk-act:first-child { background: var(--accent); color: var(--on-accent); }
+.sk[data-style="mdark"] .sk-act .sk-meta { max-width: 100%; opacity: .75; }
+.sk[data-style="mdark"] .sk-share { border-radius: 18px; }
+.sk[data-style="mdark"] .sk-sms, .sk[data-style="mdark"] .sk-video, .sk[data-style="mdark"] .sk-mapbtn { border-radius: 18px; }
+
+/* =========================================================
+   5. 럭셔리 골드 — 깊은 바탕, 금빛 선, 가운데 명조
+   ========================================================= */
+.sk[data-style="gold"] { --gold: linear-gradient(135deg, #8a6a2b, #e8cf8a 30%, #b88d3e 55%, #f3dfa2 75%, #9a7633); }
+.sk[data-style="gold"] .sk-bg::before, .sk[data-style="gold"] .sk-bg::after { content: ""; position: absolute; left: 14px; right: 14px; height: 1px; background: var(--gold); }
+.sk[data-style="gold"] .sk-bg::before { top: 14px; } .sk[data-style="gold"] .sk-bg::after { bottom: 14px; }
+.sk[data-style="gold"] .sk-wrap { padding-top: 44px; text-align: center; }
+.sk[data-style="gold"] .sk-photo { width: 70%; aspect-ratio: 3 / 4; margin: 0 auto; border-radius: 999px 999px 0 0; padding: 4px; background: var(--gold); }
+.sk[data-style="gold"] .sk-photo img { border-radius: 999px 999px 0 0; }
+.sk[data-style="gold"] .sk-photo.sk-nophoto { width: 92px; height: 92px; aspect-ratio: auto; border-radius: 50%; display: grid; place-items: center; padding: 2px; }
+.sk[data-style="gold"] .sk-nophoto .sk-mono { width: 100%; height: 100%; display: grid; place-items: center; border-radius: 50%; background: var(--bg); color: var(--accent-line); font-size: 40px; }
+.sk[data-style="gold"] .sk-titles { margin-top: 26px; }
+.sk[data-style="gold"] .sk-titles::after { content: "✦"; display: block; margin-top: 16px; color: var(--accent-line); font-size: 14px; letter-spacing: 1.2em; padding-left: 1.2em; }
+.sk[data-style="gold"] .sk-title { font-size: clamp(32px, 10vw, 42px); font-weight: 700; letter-spacing: .02em; }
+.sk[data-style="gold"] .sk-sub { font-size: 13px; letter-spacing: .22em; margin-top: 14px; }
+.sk[data-style="gold"] .sk-list { margin-top: 18px; }
+.sk[data-style="gold"] .sk-list li { font-family: var(--f-title); padding: 11px 0; font-size: 16px; }
+.sk[data-style="gold"] .sk-list li + li::before { content: ""; display: block; width: 40px; height: 1px; margin: 0 auto 11px; background: var(--gold); opacity: .8; }
+.sk[data-style="gold"] .sk-actions { gap: 10px; margin-top: 26px; text-align: left; }
+.sk[data-style="gold"] .sk-act { flex-direction: column; justify-content: center; text-align: center; gap: 8px; min-height: 100px; border: 1px solid color-mix(in srgb, var(--accent) 70%, transparent); }
+.sk[data-style="gold"] .sk-act .sk-ico { color: var(--accent-line); }
+.sk[data-style="gold"] .sk-act .sk-lab { font-family: var(--f-title); font-size: 16px; letter-spacing: .04em; }
+.sk[data-style="gold"] .sk-act .sk-meta { max-width: 100%; color: var(--sub-bg); opacity: 1; }
+.sk[data-style="gold"] .sk-share, .sk[data-style="gold"] .sk-sms, .sk[data-style="gold"] .sk-video, .sk[data-style="gold"] .sk-mapbtn { border-radius: 0; }
+
+/* =========================================================
+   6. 미국 레트로 팝 — 크림 바탕, 굵은 테두리, 별 배지, 망점
+   ========================================================= */
+.sk[data-style="retro"] { --edge: var(--ink); }
+.sk[data-style="retro"] .sk-bg { background-image: radial-gradient(color-mix(in srgb, var(--accent) 35%, transparent) 1.6px, transparent 2px); background-size: 12px 12px; -webkit-mask-image: linear-gradient(to bottom, #000, transparent 40%); mask-image: linear-gradient(to bottom, #000, transparent 40%); }
+.sk[data-style="retro"] .sk-wrap { padding-top: 26px; }
+.sk[data-style="retro"] .sk-hero { padding: 20px 18px 22px; background: var(--paper); color: var(--ink); border: 3px solid var(--edge); border-radius: 22px; box-shadow: 6px 6px 0 var(--edge); }
+.sk[data-style="retro"] .sk-hero::before { content: ""; position: absolute; left: -3px; right: -3px; top: -3px; height: 18px; border-radius: 22px 22px 0 0; background: repeating-linear-gradient(90deg, var(--c1) 0 16px, var(--paper) 16px 32px); border: 3px solid var(--edge); border-bottom: 0; }
+.sk[data-style="retro"] .sk-photo { aspect-ratio: 4 / 3; margin-top: 12px; border: 3px solid var(--edge); border-radius: 14px; }
+.sk[data-style="retro"] .sk-photo.sk-nophoto { position: absolute; right: -14px; top: -20px; width: 86px; height: 86px; aspect-ratio: auto; margin: 0; border: 0; border-radius: 0; background: var(--accent); display: grid; place-items: center; transform: rotate(12deg);
+  clip-path: polygon(50% 0, 61% 18%, 82% 10%, 80% 32%, 100% 40%, 85% 55%, 96% 75%, 74% 77%, 70% 100%, 50% 86%, 30% 100%, 26% 77%, 4% 75%, 15% 55%, 0 40%, 20% 32%, 18% 10%, 39% 18%); }
+.sk[data-style="retro"] .sk-nophoto .sk-mono { color: var(--on-accent); font-size: 30px; transform: rotate(-12deg); }
+.sk[data-style="retro"] .sk-titles { margin-top: 18px; }
+.sk[data-style="retro"] .sk-nophoto + .sk-titles { margin-top: 18px; padding-right: 64px; }
+.sk[data-style="retro"] .sk-title { font-size: clamp(36px, 11vw, 48px); font-weight: 400; line-height: 1.05; color: var(--ink); text-shadow: 3px 3px 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+.sk[data-style="retro"] .sk-sub { color: var(--sub); font-weight: 800; font-size: 14.5px; }
+.sk[data-style="retro"] .sk-list { margin-top: 22px; padding: 4px 16px; background: var(--paper); color: var(--ink); border: 3px solid var(--edge); border-radius: 18px; }
+.sk[data-style="retro"] .sk-list li { padding: 11px 0; font-weight: 800; font-size: 15.5px; }
+.sk[data-style="retro"] .sk-list li + li { border-top: 2px dotted var(--edge); }
+.sk[data-style="retro"] .sk-actions { gap: 12px; margin-top: 22px; }
+.sk[data-style="retro"] .sk-act { flex-direction: column; justify-content: center; text-align: center; gap: 6px; min-height: 100px; background: var(--paper); color: var(--ink); border: 3px solid var(--edge); border-radius: 18px; box-shadow: 4px 4px 0 var(--edge); }
+.sk[data-style="retro"] .sk-act:nth-child(1) { background: var(--accent); color: var(--on-accent); }
+.sk[data-style="retro"] .sk-act:nth-child(4) { background: var(--c1); color: var(--on-c1); }
+.sk[data-style="retro"] .sk-act .sk-lab { font-weight: 900; font-size: 17px; }
+.sk[data-style="retro"] .sk-act .sk-meta { max-width: 100%; opacity: .8; }
+.sk[data-style="retro"] .sk-ico svg { stroke-width: 2.3; }
+.sk[data-style="retro"] .sk-share { border: 3px solid var(--edge); box-shadow: 4px 4px 0 var(--edge); border-radius: 18px; }
+.sk[data-style="retro"] .sk-sms, .sk[data-style="retro"] .sk-video, .sk[data-style="retro"] .sk-mapbtn { border: 3px solid var(--edge); border-radius: 18px; background: var(--paper); color: var(--ink); }
+
+/* =========================================================
+   7. 네온 나이트 — 밤거리 간판처럼 빛나는 글씨
+   ========================================================= */
+.sk[data-style="neon"] .sk-bg { background: radial-gradient(80% 50% at 50% 0%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%), repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px); }
+.sk[data-style="neon"] .sk-wrap { padding-top: 34px; text-align: center; }
+.sk[data-style="neon"] .sk-photo { aspect-ratio: 1 / 1; border-radius: 24px; border: 2px solid var(--c1); box-shadow: 0 0 0 4px color-mix(in srgb, var(--c1) 18%, transparent), 0 0 30px color-mix(in srgb, var(--c1) 55%, transparent); }
+.sk[data-style="neon"] .sk-photo.sk-nophoto { width: 96px; height: 96px; aspect-ratio: auto; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; background: transparent; }
+.sk[data-style="neon"] .sk-nophoto .sk-mono { font-size: 44px; color: #fff; text-shadow: 0 0 6px var(--c1), 0 0 16px var(--c1), 0 0 30px var(--c1); }
+.sk[data-style="neon"] .sk-titles { margin-top: 26px; }
+.sk[data-style="neon"] .sk-title { font-size: clamp(38px, 12vw, 52px); font-weight: 900; color: #fff; letter-spacing: -0.02em;
+  text-shadow: 0 0 4px #fff, 0 0 12px var(--accent), 0 0 26px var(--accent), 0 0 48px var(--accent); }
+.sk[data-style="neon"] .sk-sub { margin-top: 14px; color: var(--c2); text-shadow: 0 0 10px color-mix(in srgb, var(--c2) 60%, transparent); font-weight: 700; letter-spacing: .06em; }
+.sk[data-style="neon"] .sk-list { margin-top: 26px; padding: 6px 18px; border-radius: 20px; border: 1.5px solid color-mix(in srgb, var(--c2) 60%, transparent); box-shadow: inset 0 0 22px color-mix(in srgb, var(--c2) 14%, transparent); }
+.sk[data-style="neon"] .sk-list li { padding: 12px 0; font-size: 15.5px; }
+.sk[data-style="neon"] .sk-list li + li { border-top: 1px solid var(--line); }
+.sk[data-style="neon"] .sk-actions { gap: 12px; margin-top: 24px; text-align: left; }
+.sk[data-style="neon"] .sk-act { flex-direction: column; justify-content: center; text-align: center; gap: 8px; min-height: 104px; border-radius: 20px; border: 2px solid var(--accent); box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 45%, transparent), inset 0 0 14px color-mix(in srgb, var(--accent) 20%, transparent); }
+.sk[data-style="neon"] .sk-act:nth-child(even) { border-color: var(--c1); box-shadow: 0 0 14px color-mix(in srgb, var(--c1) 45%, transparent), inset 0 0 14px color-mix(in srgb, var(--c1) 20%, transparent); }
+.sk[data-style="neon"] .sk-act .sk-ico { filter: drop-shadow(0 0 6px currentColor); }
+.sk[data-style="neon"] .sk-act .sk-meta { max-width: 100%; color: var(--sub-bg); opacity: 1; }
+.sk[data-style="neon"] .sk-share { border-radius: 20px; box-shadow: 0 0 24px rgba(254, 229, 0, .45); }
+.sk[data-style="neon"] .sk-sms, .sk[data-style="neon"] .sk-video, .sk[data-style="neon"] .sk-mapbtn { border-radius: 20px; }
+
+/* =========================================================
+   8. 일본 와풍 — 와시 종이, 청해파 물결, 붉은 해
+   ========================================================= */
+.sk[data-style="wafu"] .sk-bg {
+  background:
+    radial-gradient(circle at 100% 100%, transparent 18px, color-mix(in srgb, var(--accent) 16%, transparent) 19px 20px, transparent 21px 26px, color-mix(in srgb, var(--accent) 16%, transparent) 27px 28px, transparent 29px) 0 0 / 40px 20px,
+    radial-gradient(circle at 0 100%, transparent 18px, color-mix(in srgb, var(--accent) 16%, transparent) 19px 20px, transparent 21px 26px, color-mix(in srgb, var(--accent) 16%, transparent) 27px 28px, transparent 29px) 0 0 / 40px 20px;
+  -webkit-mask-image: linear-gradient(to top, #000 0, transparent 34%); mask-image: linear-gradient(to top, #000 0, transparent 34%);
+}
+.sk[data-style="wafu"] .sk-wrap { padding-top: 30px; }
+.sk[data-style="wafu"] .sk-hero { display: grid; grid-template-columns: 1fr; }
+.sk[data-style="wafu"] .sk-hero::before { content: ""; position: absolute; right: 6px; top: 0; width: 74px; height: 74px; border-radius: 50%; background: var(--c1); opacity: .92; }
+.sk[data-style="wafu"] .sk-photo { aspect-ratio: 3 / 4; width: 78%; margin-top: 84px; border-radius: 2px; box-shadow: 14px 14px 0 color-mix(in srgb, var(--accent) 22%, transparent); }
+.sk[data-style="wafu"] .sk-photo.sk-nophoto { display: none; }
+.sk[data-style="wafu"] .sk-titles { order: -1; padding-right: 90px; }
+.sk[data-style="wafu"] .sk-titles::before { content: ""; display: block; width: 3px; height: 34px; background: var(--accent-line); margin-bottom: 16px; }
+.sk[data-style="wafu"] .sk-title { font-size: clamp(32px, 10vw, 42px); font-weight: 600; letter-spacing: .06em; line-height: 1.3; }
+.sk[data-style="wafu"] .sk-sub { font-family: var(--f-title); font-size: 14.5px; letter-spacing: .08em; }
+.sk[data-style="wafu"] .sk-list { margin-top: 28px; border-top: 2px solid var(--accent-line); border-bottom: 2px solid var(--accent-line); }
+.sk[data-style="wafu"] .sk-list li { font-family: var(--f-title); padding: 13px 4px; font-size: 16px; letter-spacing: .03em; }
+.sk[data-style="wafu"] .sk-list li + li { border-top: 1px dashed var(--line); }
+.sk[data-style="wafu"] .sk-actions { gap: 0; margin-top: 26px; border: 1.5px solid var(--accent-line); }
+.sk[data-style="wafu"] .sk-act { flex-direction: column; justify-content: center; text-align: center; gap: 6px; min-height: 96px; }
+.sk[data-style="wafu"] .sk-act:nth-child(odd) { border-right: 1.5px solid var(--accent-line); }
+.sk[data-style="wafu"] .sk-act:nth-child(n+3) { border-top: 1.5px solid var(--accent-line); }
+.sk[data-style="wafu"] .sk-act:first-child { background: var(--accent); color: var(--on-accent); }
+.sk[data-style="wafu"] .sk-act .sk-lab { font-family: var(--f-title); font-weight: 700; letter-spacing: .06em; }
+.sk[data-style="wafu"] .sk-act .sk-meta { max-width: 100%; opacity: .8; }
+.sk[data-style="wafu"] .sk-share, .sk[data-style="wafu"] .sk-sms, .sk[data-style="wafu"] .sk-video, .sk[data-style="wafu"] .sk-mapbtn { border-radius: 0; }
+
+/* =========================================================
+   9. 중국 홍금 — 붉은 바탕, 금빛 이중 테두리, 둥근 달문
+   ========================================================= */
+.sk[data-style="hongjin"] { --gold: linear-gradient(135deg, #b8862f, #f6dc8c 35%, #c99a3d 60%, #f8e3a3); }
+.sk[data-style="hongjin"] .sk-bg { background: radial-gradient(circle at 50% 18%, color-mix(in srgb, #ffffff 10%, transparent), transparent 55%), repeating-conic-gradient(from 0deg at 50% 18%, color-mix(in srgb, var(--accent) 5%, transparent) 0 6deg, transparent 6deg 12deg); }
+.sk[data-style="hongjin"] .sk-wrap { padding-top: 22px; }
+.sk[data-style="hongjin"] .sk-main { padding: 26px 20px 22px; border: 3px double var(--accent-line); outline: 1px solid color-mix(in srgb, var(--accent) 60%, transparent); outline-offset: 5px; margin: 6px; text-align: center; }
+.sk[data-style="hongjin"] .sk-photo { width: 70%; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; padding: 5px; background: var(--gold); }
+.sk[data-style="hongjin"] .sk-photo img { border-radius: 50%; }
+.sk[data-style="hongjin"] .sk-photo.sk-nophoto { width: 104px; height: 104px; aspect-ratio: auto; display: grid; place-items: center; padding: 4px; }
+.sk[data-style="hongjin"] .sk-nophoto .sk-mono { width: 100%; height: 100%; display: grid; place-items: center; border-radius: 50%; background: var(--bg); color: var(--accent-line); font-size: 46px; font-weight: 900; }
+.sk[data-style="hongjin"] .sk-titles { margin-top: 22px; }
+.sk[data-style="hongjin"] .sk-title { font-size: clamp(34px, 11vw, 46px); font-weight: 900; letter-spacing: .04em; color: var(--accent-line); }
+.sk[data-style="hongjin"] .sk-sub { font-family: var(--f-title); font-size: 15px; font-weight: 700; }
+.sk[data-style="hongjin"] .sk-titles::after { content: "◆ ◇ ◆"; display: block; margin-top: 14px; color: var(--accent-line); font-size: 11px; letter-spacing: .5em; }
+.sk[data-style="hongjin"] .sk-list { margin-top: 14px; }
+.sk[data-style="hongjin"] .sk-list li { font-family: var(--f-title); padding: 10px 0; font-size: 16px; }
+.sk[data-style="hongjin"] .sk-actions { gap: 10px; margin-top: 20px; text-align: left; }
+.sk[data-style="hongjin"] .sk-act { flex-direction: column; justify-content: center; text-align: center; gap: 6px; min-height: 96px; border-radius: 10px; background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 2px var(--accent), inset 0 0 0 4px var(--paper), inset 0 0 0 5px color-mix(in srgb, var(--accent) 60%, transparent); }
+.sk[data-style="hongjin"] .sk-act .sk-ico { color: var(--bg); }
+.sk[data-style="hongjin"] .sk-act .sk-lab { font-family: var(--f-title); font-weight: 900; }
+.sk[data-style="hongjin"] .sk-act .sk-meta { max-width: 100%; color: var(--sub); opacity: 1; }
+.sk[data-style="hongjin"] .sk-share, .sk[data-style="hongjin"] .sk-sms, .sk[data-style="hongjin"] .sk-video, .sk[data-style="hongjin"] .sk-mapbtn { border-radius: 10px; }
+
+/* =========================================================
+   10. 유럽 빈티지 — 파리 카페 차양, 이탤릭 세리프, 크림 종이
+   ========================================================= */
+.sk[data-style="paris"] .sk-bg::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 46px;
+  background: repeating-linear-gradient(90deg, var(--accent) 0 26px, var(--paper) 26px 52px); }
+.sk[data-style="paris"] .sk-bg::after { content: ""; position: absolute; left: 0; right: 0; top: 46px; height: 14px;
+  background: radial-gradient(circle at 13px 0, var(--accent) 12px, transparent 12.5px) 0 0 / 52px 14px, radial-gradient(circle at 39px 0, var(--paper) 12px, transparent 12.5px) 0 0 / 52px 14px; }
+.sk[data-style="paris"] .sk-wrap { padding-top: 84px; text-align: center; }
+.sk[data-style="paris"] .sk-photo { aspect-ratio: 4 / 5; width: 82%; margin: 0 auto; border: 1px solid var(--line); padding: 8px; background: var(--paper); }
+.sk[data-style="paris"] .sk-photo.sk-nophoto { width: 112px; height: 112px; aspect-ratio: auto; padding: 0; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--accent-line); box-shadow: 0 0 0 5px var(--bg), 0 0 0 6px var(--line); }
+.sk[data-style="paris"] .sk-nophoto .sk-mono { font-size: 48px; font-style: italic; color: var(--accent-line); }
+.sk[data-style="paris"] .sk-titles { margin-top: 24px; }
+.sk[data-style="paris"] .sk-title { font-size: clamp(34px, 10.5vw, 44px); font-weight: 600; font-style: italic; letter-spacing: -0.01em; }
+.sk[data-style="paris"] .sk-sub { font-family: var(--f-title); font-style: italic; font-size: 15px; }
+.sk[data-style="paris"] .sk-titles::after { content: ""; display: block; width: 120px; height: 10px; margin: 16px auto 0; background: radial-gradient(circle, var(--accent-line) 2px, transparent 2.5px) center / 10px 10px repeat-x; }
+.sk[data-style="paris"] .sk-list { margin-top: 18px; padding: 6px 18px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); outline: 1px solid var(--line); outline-offset: 4px; }
+.sk[data-style="paris"] .sk-list li { font-family: var(--f-title); padding: 11px 0; font-size: 16px; }
+.sk[data-style="paris"] .sk-list li + li { border-top: 1px dotted var(--line-ink); }
+.sk[data-style="paris"] .sk-actions { gap: 10px; margin-top: 26px; text-align: left; }
+.sk[data-style="paris"] .sk-act { flex-direction: column; justify-content: center; text-align: center; gap: 6px; min-height: 96px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 999px 999px 14px 14px; }
+.sk[data-style="paris"] .sk-act .sk-ico { color: var(--accent-line); }
+.sk[data-style="paris"] .sk-act .sk-lab { font-family: var(--f-title); font-style: italic; font-weight: 700; font-size: 16.5px; }
+.sk[data-style="paris"] .sk-act .sk-meta { max-width: 100%; color: var(--sub); opacity: 1; }
+.sk[data-style="paris"] .sk-share { border-radius: 999px; }
+.sk[data-style="paris"] .sk-sms, .sk[data-style="paris"] .sk-video, .sk[data-style="paris"] .sk-mapbtn { border-radius: 999px; }
+
+/* =========================================================
+   11. 북유럽 내추럴 — 귀리빛 바탕, 나무색, 둥근 도형
+   ========================================================= */
+.sk[data-style="nordic"] .sk-bg i { display: block; position: absolute; }
+.sk[data-style="nordic"] .sk-bg i:nth-child(1) { width: 150px; height: 150px; right: -40px; top: 40px; border-radius: 50%; background: var(--c1); opacity: .55; }
+.sk[data-style="nordic"] .sk-bg i:nth-child(2) { width: 90px; height: 180px; left: -30px; top: 260px; border-radius: 0 90px 90px 0; background: var(--c2); opacity: .45; }
+.sk[data-style="nordic"] .sk-bg i:nth-child(3) { width: 120px; height: 60px; right: 30px; bottom: 120px; border-radius: 120px 120px 0 0; background: var(--c3); opacity: .45; }
+.sk[data-style="nordic"] .sk-wrap { padding-top: 34px; }
+.sk[data-style="nordic"] .sk-photo { aspect-ratio: 1 / 1; border-radius: 160px 160px 24px 24px; }
+.sk[data-style="nordic"] .sk-photo.sk-nophoto { width: 84px; height: 84px; aspect-ratio: auto; border-radius: 28px; display: grid; place-items: center; background: var(--accent); }
+.sk[data-style="nordic"] .sk-nophoto .sk-mono { font-size: 38px; font-weight: 800; color: var(--on-accent); }
+.sk[data-style="nordic"] .sk-titles { margin-top: 22px; }
+.sk[data-style="nordic"] .sk-title { font-size: clamp(34px, 10.5vw, 44px); font-weight: 800; letter-spacing: -0.045em; }
+.sk[data-style="nordic"] .sk-sub { font-size: 14.5px; }
+.sk[data-style="nordic"] .sk-list { margin-top: 22px; display: grid; gap: 8px; }
+.sk[data-style="nordic"] .sk-list li { padding: 13px 16px; border-radius: 16px; background: var(--paper); color: var(--ink); font-size: 15.5px; }
+.sk[data-style="nordic"] .sk-actions { gap: 8px; margin-top: 18px; }
+.sk[data-style="nordic"] .sk-act { gap: 12px; min-height: 66px; padding: 12px 14px; border-radius: 18px; background: var(--paper); color: var(--ink); }
+.sk[data-style="nordic"] .sk-act .sk-ico { width: 38px; height: 38px; border-radius: 12px; background: var(--accent); color: var(--on-accent); }
+.sk[data-style="nordic"] .sk-act { flex-wrap: wrap; }
+.sk[data-style="nordic"] .sk-act .sk-meta { flex-basis: 100%; margin-top: -6px; color: var(--sub); opacity: 1; }
+.sk[data-style="nordic"] .sk-share { border-radius: 18px; }
+.sk[data-style="nordic"] .sk-sms, .sk[data-style="nordic"] .sk-video, .sk[data-style="nordic"] .sk-mapbtn { border-radius: 18px; }
+
+/* 썸네일에서는 애니메이션 없이 */
+.sk-thumb[data-style] * { animation: none !important; }
+
+
+/* v11: 정돈된 식당·카페 메뉴판 */
+.sk-menu { margin: 24px 0 8px; padding: 20px 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); color: var(--ink); text-align: left; }
+.sk-menu-head { margin-bottom: 12px; }
+.sk-menu-kicker { display: block; margin-bottom: 4px; color: var(--accent-line); font-size: 10px; font-weight: 800; letter-spacing: .18em; }
+.sk-menu-title { margin: 0; color: var(--ink); font-family: var(--f-title); font-size: 21px; line-height: 1.3; }
+.sk-menu-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.sk-menu-item { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
+.sk-menu-item.sk-menu-featured { padding-top: 14px; }
+.sk-menu-name { min-width: 0; font-size: 14px; font-weight: 650; line-height: 1.5; overflow-wrap: anywhere; }
+.sk-menu-featured .sk-menu-name { font-size: 15px; font-weight: 800; }
+.sk-menu-price { flex: 0 0 auto; font-size: 14px; font-weight: 750; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* v12 restaurant menu: category, thumbnail and sold-out states */
+.sk-menu-category { padding: 13px 0 5px; border-top: 1px solid var(--line); color: var(--accent-line); font-size: 11px; font-weight: 850; letter-spacing: .08em; }
+.sk-menu-thumb { width: 64px; height: 56px; flex: 0 0 64px; border-radius: 10px; object-fit: cover; }
+.sk-menu-detail { display: grid; min-width: 0; gap: 3px; }
+.sk-menu-status { color: #b42318; font-size: 11px; font-weight: 800; }
+.sk-menu-soldout .sk-menu-name { color: var(--muted, #888); text-decoration: line-through; }
+.sk-menu-item:has(.sk-menu-thumb) { align-items: center; }
+
+/* v13 menu highlights */
+.sk-menu-badge { display: inline-flex; width: fit-content; padding: 2px 7px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 10px; font-weight: 850; }
+.sk-menu-description { color: var(--sub); font-size: 12px; line-height: 1.45; }

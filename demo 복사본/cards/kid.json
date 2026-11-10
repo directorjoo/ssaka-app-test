@@ -1,0 +1,11 @@
+{
+  "template": "kid",
+  "title": "엄마! 나 지금 여기야!",
+  "subtitle": "버튼을 누르면 엄마에게 바로 연결돼요",
+  "theme": "light",
+  "sos": true,
+  "sosLabel": "📞 엄마한테 전화",
+  "locationMessage": "엄마! 나 지금 여기야!",
+  "contact": { "name": "엄마", "phone": "010-0000-0000" },
+  "buttons": []
+}

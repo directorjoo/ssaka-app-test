@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>싸바 디자인 연결 허브</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,sans-serif;color:#191919;background:#f5f4f1}
+body{margin:0;padding:32px}.wrap{max-width:980px;margin:auto}.hero{padding:28px;border-radius:22px;background:#171717;color:#fff}
+h1{margin:0 0 8px;font-size:30px}.sub{color:#c8c5be}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:20px}
+.card{background:white;border:1px solid #e8e5df;border-radius:18px;padding:20px}.card h2{margin:0 0 8px;font-size:19px}
+.status{font-size:12px;color:#765b27;background:#f5eddc;padding:5px 9px;border-radius:30px;display:inline-block}
+p{line-height:1.55;color:#555}.btn{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#171717;color:white;text-decoration:none;font-size:14px}
+.muted{color:#777;font-size:13px}.foot{margin-top:24px;color:#777;font-size:13px}
+</style></head>
+<body><main class="wrap">
+<section class="hero"><h1>싸바 디자인 연결 허브</h1><div class="sub">외부 디자인 도구를 싸바의 업체 정보·콘텐츠 제작 흐름에 연결합니다.</div></section>
+<div id="providers" class="grid"></div>
+<p class="foot">외부 서비스의 API 권한·요금제·파트너 승인이 필요할 수 있습니다. 연결 가능 여부는 각 서비스의 공식 정책과 실제 발급 권한에 따릅니다.</p>
+</main>
+<script>
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+fetch("/api/providers").then(r=>r.json()).then(items=>{
+document.querySelector("#providers").innerHTML=items.map(p=>`
+<article class="card"><h2>${esc(p.name)}</h2><span class="status">${esc(p.status)}</span>
+<p>${esc(p.note)}</p><div class="muted">방식: ${esc(p.mode)}</div>
+${p.id==="canva"?'<a class="btn" href="/oauth/canva/start">Canva 연결</a>':""}
+${p.id==="adobe-express"?'<a class="btn" href="https://developer.adobe.com/express/embed-sdk/" target="_blank" rel="noreferrer">Adobe 개발자 설정</a>':""}
+${p.id==="figma"?'<a class="btn" href="https://www.figma.com/developers" target="_blank" rel="noreferrer">Figma 개발자 설정</a>':""}
+${p.id==="miricanvas"?'<a class="btn" href="https://www.miricanvas.com/" target="_blank" rel="noreferrer">미리캔버스 열기</a>':""}
+${p.id==="mangoboard"?'<a class="btn" href="https://www.mangoboard.net/" target="_blank" rel="noreferrer">망고보드 열기</a>':""}
+</article>`).join("");
+});
+</script></body></html>

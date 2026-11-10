@@ -1,0 +1,11 @@
+{
+  "template": "shop",
+  "title": "오늘의 메뉴 — 싸카식당",
+  "subtitle": "영업 11:30 – 22:00 · 월요일 휴무",
+  "theme": "light",
+  "body": ["오늘의 특선: 여수 갓김치 삼겹살", "점심 백반 9,000원", "단체 예약 환영 (30명까지)"],
+  "contact": { "name": "싸카식당", "phone": "02-000-0000", "callLabel": "예약하기" },
+  "place": { "name": "여수 이순신광장", "lat": 34.7396, "lng": 127.7366 },
+  "copy": { "label": "주소 복사", "value": "전남 여수시 중앙동 (예시 주소)" },
+  "buttons": ["call", "map", "save", "copy"]
+}

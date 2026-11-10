@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="../img/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=2">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>싸카 SSAKA</title>
+  <!-- 링크만 붙여넣었을 때의 미리보기. "카톡으로 보내기" 버튼으로 보내면 카드별 제목·사진이 들어갑니다 -->
+  <meta property="og:title" content="싸카 — 카드가 도착했어요">
+  <meta property="og:description" content="눌러서 카드를 열어보세요">
+  <meta property="og:image" content="https://sava.kr/img/ssaka-share.png?v=5">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../demo/css/card.css">
+  <link rel="stylesheet" href="../css/sk.css">
+  <link rel="stylesheet" href="../css/sk-world.css">
+</head>
+<body>
+  <main id="app" class="card" aria-live="polite">
+    <p class="loading">카드를 불러오는 중…</p>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script>window.SSAKA_CARDS = '../demo/cards/';</script>
+  <script src="../js/codec.js"></script>
+  <script src="../js/inapp.js"></script>
+  <script src="../js/designs.js"></script>
+  <script src="../js/render.js"></script>
+  <script src="../js/reserve.js"></script>
+  <script src="../js/sound.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../demo/js/vcard.js"></script>
+  <script src="../demo/js/card.js"></script>
+  <script src="../js/share.js"></script>
+</body>
+</html>

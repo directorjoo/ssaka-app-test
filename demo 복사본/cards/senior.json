@@ -1,0 +1,12 @@
+{
+  "template": "senior",
+  "title": "어르신 안심 카드",
+  "subtitle": "도움이 필요하면 빨간 버튼을 누르세요",
+  "theme": "contrast",
+  "sos": true,
+  "sosLabel": "SOS 아들에게 전화",
+  "locationMessage": "아버지 지금 여기 계세요",
+  "contact": { "name": "아들", "phone": "010-0000-0000" },
+  "body": ["주소: 여수시 ○○동 ○○아파트", "복용 약: 가방 앞주머니"],
+  "buttons": []
+}
