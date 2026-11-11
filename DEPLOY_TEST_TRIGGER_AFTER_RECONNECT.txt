@@ -1,0 +1,3 @@
+Harmless deployment trigger created after reconnecting the GitHub integration.
+
+This file contains no application code, credentials, or configuration.
